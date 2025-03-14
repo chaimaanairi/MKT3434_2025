@@ -24,6 +24,7 @@ from sklearn.metrics import accuracy_score, mean_squared_error, confusion_matrix
 import tensorflow as tf
 from tensorflow.keras import layers, models, optimizers
 
+## new branch 23501057
 class MLCourseGUI(QMainWindow):
     def __init__(self):
         super().__init__()
