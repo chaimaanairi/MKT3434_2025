@@ -653,6 +653,14 @@ class MLCourseGUI(QMainWindow):
         self.lr_spin.setSingleStep(0.001)
         lr_layout.addWidget(self.lr_spin)
         layout.addLayout(lr_layout)
+
+        # Loss Function Selection
+        loss_layout = QHBoxLayout()
+        loss_layout.addWidget(QLabel("Loss Function:"))
+        self.loss_combo = QComboBox()
+        self.loss_combo.addItems(["MSE", "MAE", "Huber", "Cross-Entropy", "Hinge"])
+        loss_layout.addWidget(self.loss_combo)
+        layout.addLayout(loss_layout)
         
         group.setLayout(layout)
         return group
@@ -707,11 +715,26 @@ class MLCourseGUI(QMainWindow):
             # One-hot encode target for classification
             y_train = tf.keras.utils.to_categorical(self.y_train)
             y_test = tf.keras.utils.to_categorical(self.y_test)
-            
-            # Compile model
+
+            # Get selected loss function
+            selected_loss = self.loss_combo.currentText()
+
+            # Select appropriate loss function based on user choice
+            if selected_loss == "MSE":
+                loss_function = 'mean_squared_error'
+            elif selected_loss == "MAE":
+                loss_function = 'mean_absolute_error'
+            elif selected_loss == "Huber":
+                loss_function = 'huber_loss'
+            elif selected_loss == "Cross-Entropy":
+                loss_function = 'categorical_crossentropy'
+            elif selected_loss == "Hinge":
+                loss_function = 'hinge'
+
+            # Compile model with selected loss function
             optimizer = optimizers.Adam(learning_rate=learning_rate)
             model.compile(optimizer=optimizer,
-                          loss='categorical_crossentropy',
+                          loss=loss_function,
                           metrics=['accuracy'])
             
             # Train model
