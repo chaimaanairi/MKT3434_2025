@@ -179,9 +179,6 @@ class MLCourseGUI(QMainWindow):
         self.load_btn = QPushButton("Load Data")
         self.load_btn.clicked.connect(self.load_custom_data)
 
-        # Missing data handling options
-        self.missing_data_combo = QComboBox()
-        self.missing_data_combo.addItems(["None", "Mean Imputation", "Interpolation", "Forward Fill", "Backward Fill"])
 
         # Preprocessing options
         self.scaling_combo = QComboBox()
@@ -197,8 +194,6 @@ class MLCourseGUI(QMainWindow):
         data_layout.addWidget(QLabel("Dataset:"))
         data_layout.addWidget(self.dataset_combo)
         data_layout.addWidget(self.load_btn)
-        data_layout.addWidget(QLabel("Missing Data Handling:"))
-        data_layout.addWidget(self.missing_data_combo)
         data_layout.addWidget(QLabel("Scaling:"))
         data_layout.addWidget(self.scaling_combo)
         data_layout.addWidget(QLabel("Test Split:"))
@@ -407,6 +402,12 @@ class MLCourseGUI(QMainWindow):
         self.figure = Figure(figsize=(8, 6))
         self.canvas = FigureCanvas(self.figure)
         viz_layout.addWidget(self.canvas)
+
+        # Missing data handling options display
+        self.missing_data_combo = QComboBox()
+        self.missing_data_combo.addItems(["None", "Mean Imputation", "Interpolation", "Forward Fill", "Backward Fill"])
+        viz_layout.addWidget(QLabel("Missing Data Handling:"))
+        viz_layout.addWidget(self.missing_data_combo)
 
         # Metrics display
         self.metrics_text = QTextEdit()
