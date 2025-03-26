@@ -67,7 +67,3 @@ This project enhances the base GUI framework provided for the MKT3434 course. Th
 
 ---
 
-## 📊 Results & Analysis
-- **Impact of Missing Data Handling Methods** on model accuracy.
-- **Comparison of different loss functions on training performance.**
-- **Performance metrics visualization included in GUI.**
