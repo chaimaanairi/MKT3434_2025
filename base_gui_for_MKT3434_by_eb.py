@@ -179,7 +179,7 @@ class MLCourseGUI(QMainWindow):
         self.load_btn = QPushButton("Load Data")
         self.load_btn.clicked.connect(self.load_custom_data)
 
-        # Missing_data_handling options
+        # Missing data handling options
         self.missing_data_combo = QComboBox()
         self.missing_data_combo.addItems(["None", "Mean Imputation", "Interpolation", "Forward Fill", "Backward Fill"])
 
