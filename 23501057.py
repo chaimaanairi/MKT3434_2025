@@ -308,7 +308,7 @@ class MLCourseGUI(QMainWindow):
         # Naive Bayes
         nb_group = self.create_algorithm_group(
             "Naive Bayes",
-            {"var_smoothing": "double"}
+            {"var_smoothing": "double", "priors": "double"}
         )
         classification_layout.addWidget(nb_group)
 
