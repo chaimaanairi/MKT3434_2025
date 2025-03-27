@@ -70,7 +70,7 @@ class MLCourseGUI(QMainWindow):
             elif dataset_name == "Digits Dataset":
                 data = datasets.load_digits()
             elif dataset_name == "Boston Housing Dataset":
-                data = datasets.load_boston()
+                data = datasets.fetch_california_housing()
             elif dataset_name == "MNIST Dataset":
                 (X_train, y_train), (X_test, y_test) = tf.keras.datasets.mnist.load_data()
                 self.X_train, self.X_test = X_train, X_test
@@ -506,7 +506,6 @@ class MLCourseGUI(QMainWindow):
 
                 y_pred = model.predict(self.X_test)
 
-                # Calculate loss
                 loss_function = self.loss_combo_reg.currentText()
                 if loss_function == "MSE":
                     loss = mean_squared_error(self.y_test, y_pred)
@@ -1127,16 +1126,16 @@ class MLCourseGUI(QMainWindow):
 
         self.canvas.draw()
 
-    def update_metrics(self, y_pred):
+    def update_metrics(self, y_pred, loss):
         """Update metrics display"""
         metrics_text = "Model Performance Metrics:\n\n"
+        metrics_text += f"Loss: {loss:.4f}\n"
 
         # Calculate appropriate metrics based on problem type
         if len(np.unique(self.y_test)) > 10:  # Regression
             mse = mean_squared_error(self.y_test, y_pred)
             rmse = np.sqrt(mse)
             r2 = self.current_model.score(self.X_test, self.y_test)
-
             metrics_text += f"Mean Squared Error: {mse:.4f}\n"
             metrics_text += f"Root Mean Squared Error: {rmse:.4f}\n"
             metrics_text += f"R² Score: {r2:.4f}"
