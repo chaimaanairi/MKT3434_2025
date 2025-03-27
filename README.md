@@ -23,8 +23,6 @@ This project enhances the base GUI framework provided for the MKT3434 course. Th
   - Mean Imputation
   - Interpolation
   - Forward/Backward Fill
-- **SVR Testing on the Boston Housing Dataset** with performance evaluation.
-- **Updated GUI** to include new features and selections.
 
 ---
 
