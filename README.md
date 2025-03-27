@@ -30,7 +30,7 @@ This project enhances the base GUI framework provided for the MKT3434 course. Th
 
 ## 🛠 New Features & Enhancements
 
-### 1️⃣ Loss Function Selection for Model Training
+### 1️. Loss Function Selection for Model Training
 | Loss Type      | Available Functions       |
 |---------------|--------------------------|
 | Regression    | MSE, MAE, Huber Loss      |
@@ -38,18 +38,18 @@ This project enhances the base GUI framework provided for the MKT3434 course. Th
 
 - **GUI Update:** Added dropdown menu for selecting loss functions.
 
-### 2️⃣ Improved SVM Model Support
+### 2️. Improved SVM Model Support
 - **Classification (SVC) & Regression (SVR)**
 - **User-selectable Kernels:** `linear`, `rbf`, `polynomial`
 - **Hyperparameter Tuning:** `C`, `epsilon`
 - **GUI Update:** Parameter selection menu added.
 
-### 3️⃣ Gaussian Naïve Bayes (GaussianNB) Implementation
+### 3️. Gaussian Naïve Bayes (GaussianNB) Implementation
 - **User-configurable `var_smoothing` parameter**
 - **Customizable Prior Probabilities** (Uniform or User-Defined)
 - **GUI Update:** Added input fields for priors and smoothing.
 
-### 4️⃣ Missing Data Handling Methods
+### 4️. Missing Data Handling Methods
 #### Options Available:
 | Handling Method      | Description                            |
 |---------------------|----------------------------------|
@@ -59,11 +59,6 @@ This project enhances the base GUI framework provided for the MKT3434 course. Th
 
 - **Implementation:** Uses `SimpleImputer` from `scikit-learn`.
 - **GUI Update:** Dropdown menu for missing data handling.
-
-### 5️⃣ SVR Testing on the Boston Housing Dataset
-- **Dataset:** `datasets.load_boston()`
-- **Performance Metrics:** MSE, MAE
-- **Visualization:** Results displayed in the GUI.
 
 ---
 
