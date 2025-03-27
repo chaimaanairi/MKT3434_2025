@@ -6,7 +6,7 @@
 ### Chaimaa Nairi - 23501057  
 
 ---
-
+ 
 ## Overview
 This project enhances the base GUI framework provided for the MKT3434 course. The modifications include improvements in data handling, model training, and visualization. Key additions include:
 
