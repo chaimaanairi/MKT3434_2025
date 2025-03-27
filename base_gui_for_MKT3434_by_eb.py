@@ -427,27 +427,30 @@ class MLCourseGUI(QMainWindow):
         self.status_bar.addPermanentWidget(self.progress_bar)
 
 ## handle missing data
-    def handle_missing_data(self, data):
-        """Apply missing data handling method selected by the user."""
-        method = self.missing_data_combo.currentText()
-        if method == "Mean Imputation":
-            imputer = SimpleImputer(strategy="mean")
-        elif method == "Interpolation":
-            return data.interpolate()
-        elif method == "Forward Fill":
-            return data.fillna(method='ffill')
-        elif method == "Backward Fill":
-            return data.fillna(method='bfill')
+    def handle_missing_data(self):
+        """Handle missing data based on user selection"""
+        selected_method = self.missing_data_combo.currentText()
+        if selected_method == "Mean Imputation":
+            imputer = SimpleImputer(strategy='mean')
+        elif selected_method == "Interpolation":
+            return self.X_train.interpolate(), self.X_test.interpolate()
+        elif selected_method == "Forward Fill":
+            return self.X_train.fillna(method='ffill'), self.X_test.fillna(method='ffill')
+        elif selected_method == "Backward Fill":
+            return self.X_train.fillna(method='bfill'), self.X_test.fillna(method='bfill')
         else:
-            return data
-        return pd.DataFrame(imputer.fit_transform(data), columns=data.columns)
+            return self.X_train, self.X_test
+
+        self.X_train = pd.DataFrame(imputer.fit_transform(self.X_train), columns=self.X_train.columns)
+        self.X_test = pd.DataFrame(imputer.transform(self.X_test), columns=self.X_test.columns)
+        return self.X_train, self.X_test
+
 
 ## train model
     def train_model(self, model_name, param_widgets):
         """Train the selected model with user-defined parameters"""
         try:
-            self.X_train = self.handle_missing_data(self.X_train)
-            self.X_test = self.handle_missing_data(self.X_test)
+            self.X_train, self.X_test = self.handle_missing_data()
 
             if model_name == "Support Vector Machine":
                 kernel = param_widgets["kernel"].currentText()
