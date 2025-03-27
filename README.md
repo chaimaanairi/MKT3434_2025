@@ -7,7 +7,7 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 This project enhances the base GUI framework provided for the MKT3434 course. The modifications include improvements in data handling, model training, and visualization. Key additions include:
 
 - **Support for Loss Functions:**
@@ -28,7 +28,7 @@ This project enhances the base GUI framework provided for the MKT3434 course. Th
 
 ---
 
-## 🛠 New Features & Enhancements
+## New Features & Enhancements
 
 ### 1️. Loss Function Selection for Model Training
 | Loss Type      | Available Functions       |
