@@ -12,7 +12,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import umap
 
-
 class AdvancedDRValidationTab(QWidget):
     """
     A QWidget tab that allows users to run and visualize various
