@@ -162,6 +162,7 @@ class MLCourseGUI(QMainWindow):
                 
             except Exception as e:
                 self.show_error(f"Error applying scaling: {str(e)}")
+              
     def create_data_section(self):
         """Create the data loading and preprocessing section"""
         data_group = QGroupBox("Data Management")
