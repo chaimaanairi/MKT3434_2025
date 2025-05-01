@@ -23,6 +23,7 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import accuracy_score, mean_squared_error, confusion_matrix
 import tensorflow as tf
 from tensorflow.keras import layers, models, optimizers
+from advanced_dr_validation_gui import AdvancedDRValidationTab
 
 class MLCourseGUI(QMainWindow):
     def __init__(self):
@@ -228,6 +229,11 @@ class MLCourseGUI(QMainWindow):
             scroll.setWidgetResizable(True)
             self.tab_widget.addTab(scroll, tab_name)
 
+        # ✅ Add "Advanced DR & Validation"
+        advanced_tab = AdvancedDRValidationTab(self)
+        self.tab_widget.addTab(advanced_tab, "Advanced DR & Validation")
+
+        # Add the full tab widget to the main layout
         self.layout.addWidget(self.tab_widget)
     
     def create_classical_ml_tab(self):
