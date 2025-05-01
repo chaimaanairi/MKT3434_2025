@@ -47,9 +47,3 @@ A PyQt6-based interactive application for applying and comparing dimensionality 
 
 ---
 
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/dr-clustering-gui.git
-cd dr-clustering-gui
