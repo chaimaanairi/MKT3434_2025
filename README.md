@@ -1,46 +1,55 @@
-# ⚙️ MKT3434_2025
+# MKT3434 - Homework Assignment #2
 
-**MKT3434 Course of Dept. Mechatronics Eng. at YTU instructed by Ertugrul Bayraktar**
+## Advanced Dimensionality Reduction & Clustering GUI
 
----
-
-## 🚀 Overview
-
-This repository provides a base GUI framework for students to develop and integrate machine learning methods. The GUI is built using PyQt6 and supports various classical machine learning and deep learning techniques. Students will extend this GUI by adding necessary functionalities over time.
+### Dr. Ertuğrul BAYRAKTAR  
+### Chaimaa Nairi - 23501057  
 
 ---
 
-## 📚 Long-Term Homework Instructions
-
-Students are required to modify and enhance this GUI incrementally every three weeks. The objective is to build a fully functional and improved machine learning GUI.
-
-### 🎯 Key Requirements:
-
-*   **Insert Necessary Methods:** Integrate missing machine learning methods within the provided GUI framework.
-*   **Enhance the GUI:** The default interface is provided, but students are encouraged to improve usability and design.
-*   **Ensure Data and Method Appropriateness:** The datasets and algorithms should be compatible within the GUI structure.
-*   **Implement Training and Testing Processes:** Correctly implement model training and evaluation workflows.
-*   **Regular Submissions:** Submit updates every three weeks through Google Classroom for this course.
+## Overview  
+A PyQt6-based interactive application for applying and comparing dimensionality reduction techniques and clustering algorithms on datasets. Ideal for visualizing PCA, LDA, t-SNE, and UMAP projections and validating clustering with KMeans and cross-validation.
 
 ---
 
-## 🤝 Repository and Collaboration
+## Features
 
-Students should fork this repository and develop their versions.
+### Dimensionality Reduction
+- **PCA** – Principal Component Analysis: Visualize explained variance by components.
+- **LDA** – Linear Discriminant Analysis: Supervised 2D linear projection.
+- **t-SNE** – Nonlinear embedding with adjustable perplexity.
+- **UMAP** – Fast nonlinear manifold-preserving dimensionality reduction.
 
-Regular commits and documentation updates are expected.
+### Clustering
+- **KMeans** clustering with dynamic cluster count selection.
+- **Silhouette Score** and **Calinski-Harabasz Score** for cluster quality evaluation.
+
+### Cross-Validation
+- **K-Fold cross-validation** for clustering with adjustable data split ratios.
+
+### Extras
+- **Covariance Matrix Projection**: Simple 2D projection and eigenvector calculation demo.
 
 ---
 
-## 🏁 Getting Started
+## Comparison of Dimensionality Reduction & Evaluation Methods
 
-### ⚙️ Prerequisites:
+| Method                | Description                                              | Pros                                                   | Cons                                                       |
+|-----------------------|----------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------|
+| **PCA**               | Linear projection maximizing variance                    | Fast, interpretable, unsupervised                      | Assumes linearity, ignores class labels                   |
+| **LDA**               | Supervised projection maximizing class separation        | Emphasizes class distinctions                          | Requires labels, sensitive to imbalance                   |
+| **t-SNE**             | Nonlinear projection preserving local structure          | Excellent for visualizing clusters                     | Sensitive to perplexity, slow for large datasets          |
+| **UMAP**              | Nonlinear projection preserving global & local structure | Faster than t-SNE, good for manifold learning          | Less interpretable, parameter-sensitive                   |
+| **KMeans**            | Partitioning clustering using distance minimization      | Simple, fast                                           | Requires number of clusters, sensitive to initialization  |
+| **Silhouette Score**  | Measures intra- vs. inter-cluster distances              | Easy to interpret                                      | Misleading in imbalanced or overlapping data              |
+| **Calinski-Harabasz** | Ratio of between- to within-cluster dispersion           | Good for compact, well-separated clusters              | Degrades with noise or elongated clusters                 |
+| **K-Fold CV**         | Train/test split-based evaluation across k iterations    | Reduces overfitting risk, more robust                  | Computationally intensive, may not reflect clustering quality |
 
-Ensure you have the following installed:
+---
 
-*   Python 3.8+
+## Installation
 
-### 📦 Required dependencies:
-
+1. Clone the repository:
 ```bash
-pip install numpy pandas matplotlib PyQt6 scikit-learn tensorflow torch torchvision torchaudio opencv-python opencv-contrib-python scipy fastai kornia
+git clone https://github.com/your-username/dr-clustering-gui.git
+cd dr-clustering-gui
