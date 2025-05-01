@@ -1,4 +1,4 @@
-# MKT3434 - Homework Assignment #1
+# MKT3434 - Assignment #1
 
 ## GUI Enhancements for Data Handling and Model Completion
 
