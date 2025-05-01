@@ -25,7 +25,7 @@ from sklearn.metrics import accuracy_score, mean_squared_error, confusion_matrix
 from sklearn.svm import SVC, SVR
 import tensorflow as tf
 from tensorflow.keras import layers, models, optimizers
-
+from advanced_dr_validation_gui import AdvancedDRValidationTab
 
 class MLCourseGUI(QMainWindow):
     def __init__(self):
