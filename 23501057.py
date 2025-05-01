@@ -214,7 +214,7 @@ class MLCourseGUI(QMainWindow):
         data_group.setLayout(data_layout)
         self.layout.addWidget(data_group)
 
-    def create_tabs(self):
+        def create_tabs(self):
         """Create tabs for different ML topics"""
         self.tab_widget = QTabWidget()
 
@@ -233,6 +233,11 @@ class MLCourseGUI(QMainWindow):
             scroll.setWidgetResizable(True)
             self.tab_widget.addTab(scroll, tab_name)
 
+        # ✅ Add "Advanced DR & Validation"
+        advanced_tab = AdvancedDRValidationTab(self)
+        self.tab_widget.addTab(advanced_tab, "Advanced DR & Validation")
+
+        # Add the full tab widget to the main layout
         self.layout.addWidget(self.tab_widget)
 
     def create_classical_ml_tab(self):
