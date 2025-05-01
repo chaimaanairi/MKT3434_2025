@@ -27,7 +27,7 @@ A PyQt6-based interactive application for applying and comparing dimensionality 
 ### Cross-Validation
 - **K-Fold cross-validation** for clustering with adjustable data split ratios.
 
-### Extras
+### Covariance Matrix 
 - **Covariance Matrix Projection**: Simple 2D projection and eigenvector calculation demo.
 
 ---
