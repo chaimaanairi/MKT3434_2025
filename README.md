@@ -1,4 +1,4 @@
-# MKT3434 - Homework Assignment #2
+# MKT3434 - Assignment #2
 
 ## Advanced Dimensionality Reduction & Clustering GUI
 
