@@ -1,6 +1,6 @@
-# MKT3434 - Assignment #2
+# MKT3434 - Assignment #3
 
-## Advanced Dimensionality Reduction & Clustering GUI
+## Model Builder: Interactive Neural Network Designer
 
 ### Dr. Ertuğrul BAYRAKTAR  
 ### Chaimaa Nairi - 23501057  
@@ -8,42 +8,26 @@
 ---
 
 ## Overview  
-A PyQt6-based interactive application for applying and comparing dimensionality reduction techniques and clustering algorithms on datasets. Ideal for visualizing PCA, LDA, t-SNE, and UMAP projections and validating clustering with KMeans and cross-validation.
+An intuitive GUI-based tool to build, train, and evaluate deep learning models with support for Dense, CNN, and RNN layers, plus training enhancements and model persistence.
 
 ---
 
 ## Features
 
-### Dimensionality Reduction
-- **PCA** – Principal Component Analysis: Visualize explained variance by components.
-- **LDA** – Linear Discriminant Analysis: Supervised 2D linear projection.
-- **t-SNE** – Nonlinear embedding with adjustable perplexity.
-- **UMAP** – Fast nonlinear manifold-preserving dimensionality reduction.
+### Model Architecture
+- **Configurable Dense Layers:** Add/remove layers, set units (e.g., 128 → 64 → 32), choose activations (ReLU, Sigmoid, Tanh).
+- **CNN Support:** Add convolutional layers (custom filters, kernel size) and pooling layers (max/average), ideal for image data (e.g., MNIST).
+- **RNN Support:** Add LSTM/GRU layers for sequential data.
 
-### Clustering
-- **KMeans** clustering with dynamic cluster count selection.
-- **Silhouette Score** and **Calinski-Harabasz Score** for cluster quality evaluation.
+### Model Persistence & Management
+- Save/load model architecture and weights (`.json`, `.h5`).
+- Dynamic layer management with GUI buttons for adding/removing layers.
 
-### Cross-Validation
-- **K-Fold cross-validation** for clustering with adjustable data split ratios.
-
-### Covariance Matrix 
-- **Covariance Matrix Projection**: Simple 2D projection and eigenvector calculation demo.
-
----
-
-## Comparison of Dimensionality Reduction & Evaluation Methods
-
-| Method                | Description                                              | Pros                                                   | Cons                                                       |
-|-----------------------|----------------------------------------------------------|--------------------------------------------------------|------------------------------------------------------------|
-| **PCA**               | Linear projection maximizing variance                    | Fast, interpretable, unsupervised                      | Assumes linearity, ignores class labels                   |
-| **LDA**               | Supervised projection maximizing class separation        | Emphasizes class distinctions                          | Requires labels, sensitive to imbalance                   |
-| **t-SNE**             | Nonlinear projection preserving local structure          | Excellent for visualizing clusters                     | Sensitive to perplexity, slow for large datasets          |
-| **UMAP**              | Nonlinear projection preserving global & local structure | Faster than t-SNE, good for manifold learning          | Less interpretable, parameter-sensitive                   |
-| **KMeans**            | Partitioning clustering using distance minimization      | Simple, fast                                           | Requires number of clusters, sensitive to initialization  |
-| **Silhouette Score**  | Measures intra- vs. inter-cluster distances              | Easy to interpret                                      | Misleading in imbalanced or overlapping data              |
-| **Calinski-Harabasz** | Ratio of between- to within-cluster dispersion           | Good for compact, well-separated clusters              | Degrades with noise or elongated clusters                 |
-| **K-Fold CV**         | Train/test split-based evaluation across k iterations    | Reduces overfitting risk, more robust                  | Computationally intensive, may not reflect clustering quality |
+### Training Enhancements
+- Optimizers: Adam, SGD, RMSprop (selectable).
+- Learning rate schedulers: Step decay, exponential decay.
+- Regularization: Dropout, L2.
+- Early stopping based on validation loss.
+- Real-time training visuals: Loss/accuracy plots and gradient histograms.
 
 ---
-
