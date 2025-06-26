@@ -8,26 +8,41 @@
 ---
 
 ## Overview  
-An intuitive GUI-based tool to build, train, and evaluate deep learning models with support for Dense, CNN, and RNN layers, plus training enhancements and model persistence.
+This project delivers an interactive GUI application built with **PyQt6** that enables users to design, train, and manage neural networks visually. It integrates a deep learning backend with **TensorFlow/Keras** to build models dynamically, train on the MNIST dataset, visualize training progress, and save/load models.
+
+The tool is designed for both beginners and experts, making neural network experimentation accessible without coding.
 
 ---
 
 ## Features
 
-### Model Architecture
-- **Configurable Dense Layers:** Add/remove layers, set units (e.g., 128 → 64 → 32), choose activations (ReLU, Sigmoid, Tanh).
-- **CNN Support:** Add convolutional layers (custom filters, kernel size) and pooling layers (max/average), ideal for image data (e.g., MNIST).
-- **RNN Support:** Add LSTM/GRU layers for sequential data.
+### Neural Network Architecture  
+- **Layer Types:** Dense, Conv2D, LSTM, GRU.  
+- **Configurable Parameters:** Units/filters, kernel size (for Conv2D), activation functions (ReLU, Sigmoid, Tanh), dropout rates.  
+- **Dynamic Model Building:** Sequential assembly of layers into a Keras model.
 
-### Model Persistence & Management
-- Save/load model architecture and weights (`.json`, `.h5`).
-- Dynamic layer management with GUI buttons for adding/removing layers.
+### Training & Visualization  
+- Train models interactively on MNIST for a fixed number of epochs (default 5).  
+- Real-time training logs and final metrics displayed.  
+- Visualization of accuracy and loss curves over epochs via Matplotlib.
 
-### Training Enhancements
-- Optimizers: Adam, SGD, RMSprop (selectable).
-- Learning rate schedulers: Step decay, exponential decay.
-- Regularization: Dropout, L2.
-- Early stopping based on validation loss.
-- Real-time training visuals: Loss/accuracy plots and gradient histograms.
+### Model Management  
+- Save models as `.h5` files and load pre-trained models.  
+- Layer management via intuitive GUI controls (add/remove).  
+- Results and logs shown in a read-only text area.
 
 ---
+
+## User Interface
+
+- **Architecture Section:**  
+  Dropdown menus and input fields to select layer types and parameters, add layers, and compile the model.
+
+- **Training Section:**  
+  Buttons to start training, display training curves, save/load models, and view logs and results.
+
+---
+## Conclusion
+
+This Custom Neural Network GUI offers a streamlined, interactive environment to build, train, and manage neural networks. It serves as a practical learning and experimentation tool in deep learning, with scope for future enhancements such as support for additional datasets, more layer types, and asynchronous training with progress indicators.
+
